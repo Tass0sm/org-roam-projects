@@ -1,0 +1,6 @@
+* Workflows
+
+- Go to / create project node
+- Capture into project node
+- [ ] Clock into TODO under project node
+- [ ] Clock out of current project
