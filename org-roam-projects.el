@@ -1,5 +1,6 @@
 (require 'org-roam)
 (require 'project)
+(require 'consult)
 
 (defun orp-node-get-create ()
   "Get or create org-roam node for current project"
@@ -35,3 +36,11 @@
      ;; TODO: refine interface and customization of templates
      :templates `(("t" "todo" entry nil
                    :target (node ,id))))))
+
+(defun orp-consult-heading ()
+  "Select a heading in the current project's org-roam node."
+  (interactive)
+  (let* ((node (orp-node-get-create))
+         (file (org-roam-node-file node)))
+    (find-file file)
+    (consult-org-heading)))
